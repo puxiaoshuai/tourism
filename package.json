@@ -13,6 +13,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.3.3",
+    "ahooks": "^3.3.0",
     "antd": "^4.19.5",
     "autoprefixer": "9",
     "postcss": "7",

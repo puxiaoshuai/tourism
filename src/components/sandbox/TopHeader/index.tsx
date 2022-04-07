@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Layout, Menu, Breadcrumb, Dropdown } from 'antd';
 import {
   MenuUnfoldOutlined,
@@ -7,6 +7,7 @@ import {
   UserOutlined
 } from '@ant-design/icons';
 import Avatar from 'antd/lib/avatar/avatar';
+import {useRequest} from 'ahooks'
 const { SubMenu } = Menu;
 const { Header } = Layout;
 const Index = () => {
@@ -28,6 +29,16 @@ const Index = () => {
       </Menu.Item>
     </Menu>
   );
+  // const { loading, run } = useRequest("https://www.wanandroid.com/banner/json", {
+  //   manual: true
+  // });
+  // useEffect(() => {
+    
+   
+  //   run()
+    
+  // }, [])
+  
   return (
     <Header className="bg-white">
       {collapsed ? <MenuUnfoldOutlined onClick={changeCollapsed} /> : <MenuFoldOutlined onClick={changeCollapsed} />}
