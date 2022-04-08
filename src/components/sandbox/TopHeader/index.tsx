@@ -7,10 +7,8 @@ import {
   UserOutlined
 } from '@ant-design/icons';
 import Avatar from 'antd/lib/avatar/avatar';
-import {useRequest} from 'ahooks'
-import axios from 'axios';
+import { useRequest } from 'ahooks'
 import { getSideMenus } from '../../../common/apis';
-const { SubMenu } = Menu;
 const { Header } = Layout;
 const Index = () => {
   const [collapsed, setCollapsed] = useState(false)
@@ -32,20 +30,9 @@ const Index = () => {
     </Menu>
   );
   useEffect(() => {
-    
-   
+
+
   }, [])
-  const { loading, run } = useRequest(getSideMenus, {
-    manual: true,
-    onSuccess:(res=>{
-      console.log("res",res);
-      
-    })
-  });
-  useEffect(() => {
-    run()
-  }, [])
-  
   return (
     <Header className="bg-white">
       {collapsed ? <MenuUnfoldOutlined onClick={changeCollapsed} /> : <MenuFoldOutlined onClick={changeCollapsed} />}

@@ -7,7 +7,7 @@ import './index.css'
 const { Content } = Layout;
 const NewsSandBox = () => {
   return (
-    <Layout>
+    <Layout className="flex-1">
       <SideMenu />
       <Layout className="site-layout">
         <TopHeader />
