@@ -11,7 +11,7 @@ export default function IndexRouter() {
         </Route>
         <Route path="/" render={() => {
           const token =localStorage.getItem("token")
-          return !token ? <NewsSandBox/> :<Redirect to="/login"/>
+          return token ? <NewsSandBox/> :<Redirect to="/login"/>
         }}>
         </Route>
       </Switch>

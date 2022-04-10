@@ -54,3 +54,5 @@ export const getSideMenus = (data?: any): AxiosPromise<any> => makeGet('/api/rig
 export const updateRights = (url:string,data?: any): AxiosPromise<any> => makeUpdate(url, data);
 export const getRoles = (data?: any): AxiosPromise<any> => makeGet('/api/roles/', data);
 export const updateRoles = (url:string,data?: any): AxiosPromise<any> => makeUpdate(url, data);
+export const getUsers = (data?: any): AxiosPromise<any> => makeGet('/api/users', data);
+export const loginUser = (url:string,data?: any): AxiosPromise<any> => makeGet(url, data);

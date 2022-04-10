@@ -79,6 +79,11 @@
       "roleName": "超级管理员",
       "roleType": 1,
       "rights": [
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset",
+        "/home",
         "/user-manage",
         "/user-manage/add",
         "/user-manage/delete",
@@ -100,12 +105,7 @@
         "/news-manage/category",
         "/audit-manage",
         "/audit-manage/audit",
-        "/audit-manage/list",
-        "/publish-manage",
-        "/publish-manage/unpublished",
-        "/publish-manage/published",
-        "/publish-manage/sunset",
-        "/home"
+        "/audit-manage/list"
       ]
     },
     {

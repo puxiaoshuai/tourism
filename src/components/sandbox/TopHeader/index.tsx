@@ -7,10 +7,11 @@ import {
   UserOutlined
 } from '@ant-design/icons';
 import Avatar from 'antd/lib/avatar/avatar';
-import { useRequest } from 'ahooks'
-import { getSideMenus } from '../../../common/apis';
+import { useHistory } from 'react-router-dom';
+
 const { Header } = Layout;
 const Index = () => {
+  const history =useHistory()
   const [collapsed, setCollapsed] = useState(false)
   const changeCollapsed = () => {
     setCollapsed(!collapsed)
@@ -18,14 +19,13 @@ const Index = () => {
   const menu = (
     <Menu>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-          个人信息
-        </a>
+        个人信息
       </Menu.Item>
-      <Menu.Item danger>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-          退出登录
-        </a>
+      <Menu.Item danger onClick={()=>{
+        localStorage.removeItem("toekn")
+        history.replace('/login')
+      }}>
+        退出登录
       </Menu.Item>
     </Menu>
   );
