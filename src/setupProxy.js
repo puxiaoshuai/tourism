@@ -1,22 +1,22 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function (app) {
     app.use(
-        '/api',
+        '/news',
         createProxyMiddleware({
             target: 'https://www.wanandroid.com/',
             changeOrigin: true,
             pathRewrite: {
-                '^/api': '',
+                '^/news': '',
             }
         })
     );
     app.use(
-        '/news',
+        '/api',
         createProxyMiddleware({
             target: 'http://localhost:3004/',
             changeOrigin: true,
             pathRewrite: {
-                '^/news': '',
+                '^/api': '',
             }
         })
     );

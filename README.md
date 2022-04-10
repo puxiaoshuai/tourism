@@ -5,3 +5,4 @@ npm install -g json-server
 # 因为公司和npm镜像员不同，所以 临时切换到 淘宝源进行安装
 npm install nrm -g --save  nrm 可以管理 镜像源
 参考链接 https://www.cnblogs.com/aurora-ql/p/13269315.html
+![avatar](/zmarkdown/1.png)
