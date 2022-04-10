@@ -11,7 +11,7 @@ const Login = () => {
     onSuccess: (res: any) => {
       console.log("res", res);
       if (res.length > 0) {
-        localStorage.setItem("token", "puxiaoshuai" + Math.random());
+        localStorage.setItem("token",JSON.stringify(res[0]));
         history.replace("/home");
         message.info(`登录成功,欢迎${res[0].username}回来!`)
       } else {

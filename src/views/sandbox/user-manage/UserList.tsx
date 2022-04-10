@@ -17,6 +17,11 @@ const UserList = () => {
       key: "username"
     },
     {
+      title: "密码",
+      dataIndex: "password",
+      key: "password"
+    },
+    {
       title: "用户状态",
       dataIndex: "roleState",
       key: "roleState",

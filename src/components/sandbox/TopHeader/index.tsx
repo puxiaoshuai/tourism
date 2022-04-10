@@ -12,10 +12,17 @@ import { useHistory } from 'react-router-dom';
 const { Header } = Layout;
 const Index = () => {
   const history =useHistory()
+  const [userInfo, setUserInfo] = useState({username:""})
   const [collapsed, setCollapsed] = useState(false)
   const changeCollapsed = () => {
     setCollapsed(!collapsed)
   }
+  useEffect(() => {
+    const user =JSON.parse(localStorage.getItem('token') as string)
+    setUserInfo(user)
+   
+  }, [])
+  
   const menu = (
     <Menu>
       <Menu.Item>
@@ -29,10 +36,7 @@ const Index = () => {
       </Menu.Item>
     </Menu>
   );
-  useEffect(() => {
 
-
-  }, [])
   return (
     <Header className="bg-white">
       {collapsed ? <MenuUnfoldOutlined onClick={changeCollapsed} /> : <MenuFoldOutlined onClick={changeCollapsed} />}
@@ -41,7 +45,7 @@ const Index = () => {
           <Avatar size="default" icon={<UserOutlined />} />
         </Dropdown>
       </div>
-      <div className="float-right"><span>欢迎蒲小帅回来</span></div>
+      <div className="float-right"><span>欢迎<span className=' mx-1' style={{color:'#1890ff'}}>{userInfo.username}</span>回来</span></div>
     </Header>
   )
 }

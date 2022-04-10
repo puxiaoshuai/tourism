@@ -13,10 +13,12 @@ const Index = (props: any) => {
   const [collapsed, setCollapsed] = useState(false);
   const [menus, setMenus] = useState([]);
   const [pathName, setPathName] = useState("");
-  const checkPagePermission = (item: number) => {
-    return item;
+  const userInfo = JSON.parse(localStorage.getItem("token") as string);
+  console.log("user", userInfo?.role?.rights);
+
+  const checkPagePermission = (item: any) => {
+    return item.pagepermisson && userInfo?.role?.rights.includes(item.key);
   };
-  // const selectKeys=[props.location.pathname]
   useEffect(() => {
     console.log("xx", location);
     setPathName(location.pathname);
@@ -25,7 +27,7 @@ const Index = (props: any) => {
   const openKeys = ["/" + location.pathname.split("/")[1]];
   const renderMenu = (menu: any) => {
     return menu?.map((item: IMenu) => {
-      if (item?.children && item?.children.length > 0 && checkPagePermission(item.pagepermisson)) {
+      if (item?.children && item?.children.length > 0 && checkPagePermission(item)) {
         return (
           <SubMenu key={item.key} icon={<UserOutlined />} title={item.title}>
             {renderMenu(item.children)}
@@ -33,7 +35,7 @@ const Index = (props: any) => {
         );
       }
       return (
-        checkPagePermission(item.pagepermisson) && (
+        checkPagePermission(item) && (
           <Menu.Item
             icon={<UserOutlined />}
             key={item.key}
@@ -63,9 +65,7 @@ const Index = (props: any) => {
     <Sider trigger={null} collapsible collapsed={collapsed}>
       <div className="flex max-h-full flex-col">
         <div className=" m-auto  w-50 h-33 ">
-          <Image
-            src="https://p1-tt.byteimg.com/origin/pgc-image/a0fb108768554e918084fde24529ad99?from=pc"
-          />
+          <Image src="https://p1-tt.byteimg.com/origin/pgc-image/a0fb108768554e918084fde24529ad99?from=pc" />
         </div>
         <div className="flex-1 overflow-auto">
           <Menu
