@@ -59,7 +59,7 @@ const UserList = () => {
 
   return (
     <div>
-      <Button type="primary">添加用户</Button>
+      <Button className="mb-5" type="primary">添加用户</Button>
       <Table columns={columns} dataSource={users} />
     </div>
   );

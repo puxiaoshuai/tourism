@@ -68,3 +68,4 @@ export const getUsers = (data?: any): AxiosPromise<any> => makeGet('/api/users',
 export const loginUser = (url:string,data?: any): AxiosPromise<any> => makeGet(url, data);
 export const getRights = (data?: any): AxiosPromise<any> => makeGet('/api/rights', data);
 export const getChildren = (data?: any): AxiosPromise<any> => makeGet('/api/children', data);
+export const getNewsList = (data?: any): AxiosPromise<any> => makeGet('/api/news', data);
