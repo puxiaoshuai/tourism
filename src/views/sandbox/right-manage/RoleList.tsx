@@ -12,7 +12,6 @@ const RoleList = () => {
   const runRoles = useRequest(getRoles, {
     manual: true,
     onSuccess: (res: any) => {
-      console.log(res);
       setRoles(res);
     }
   });

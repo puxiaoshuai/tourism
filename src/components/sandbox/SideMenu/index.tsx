@@ -1,6 +1,6 @@
 import React, { useState, useEffect, memo } from "react";
 import { Layout, Menu, Image } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
+import { UserOutlined} from "@ant-design/icons";
 import { IMenu } from "../../../model/sideMenu";
 import { useRequest } from "ahooks";
 import { getSideMenus } from "../../../common/apis";
@@ -14,13 +14,10 @@ const Index = (props: any) => {
   const [menus, setMenus] = useState([]);
   const [pathName, setPathName] = useState("");
   const userInfo = JSON.parse(localStorage.getItem("token") as string);
-  console.log("user", userInfo?.role?.rights);
-
   const checkPagePermission = (item: any) => {
     return item.pagepermisson && userInfo?.role?.rights.includes(item.key);
   };
   useEffect(() => {
-    console.log("xx", location);
     setPathName(location.pathname);
   }, [location]);
 
@@ -41,7 +38,6 @@ const Index = (props: any) => {
             key={item.key}
             title={item.title}
             onClick={() => {
-              console.log("history", history);
               history.push(item.key);
             }}
           >

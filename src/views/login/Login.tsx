@@ -9,7 +9,6 @@ const Login = () => {
   const { run } = useRequest(loginUser, {
     manual: true,
     onSuccess: (res: any) => {
-      console.log("res", res);
       if (res.length > 0) {
         localStorage.setItem("token",JSON.stringify(res[0]));
         history.replace("/home");
@@ -26,7 +25,7 @@ const Login = () => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
+    
   };
   return (
     <div className=" h-full  bg-blue-400 ">
