@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Table, Tag, Switch, Popover, Button, message } from "antd";
 import { useRequest } from "ahooks";
 import { getSideMenus, updateRights } from "../../../common/apis";
+import { useHistory } from "react-router";
 
 const PermissionsList = () => {
   const [menus, setMenus] = useState([]);
+  const history =useHistory()
   const runUpdadePerssion = useRequest(updateRights, {
     manual: true,
     onSuccess: () => {
       message.info("菜单修改成功，请重新登录!")
-      //window.location.reload();
-      // runUpdadePerssion.refresh()
+      history.replace('/login')
     }
   });
   const switchChange = (r: any) => {

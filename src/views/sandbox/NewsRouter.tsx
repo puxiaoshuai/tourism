@@ -9,7 +9,7 @@ import HasAuditList from './audit-manage/HasAuditList';
 import Home from './home/Home';
 import NewsCategory from './news-manage/NewsCategory';
 import NewsDraft from './news-manage/NewsDraft';
-import AddNewsList from './news-manage/AddNewsList';
+import NewsList from './news-manage/NewsList';
 import OfflinePublish from './publish-manage/OfflinePublish';
 import PublishedList from './publish-manage/PublishedList';
 import UnpubilshedList from './publish-manage/UnpubilshedList';
@@ -26,7 +26,7 @@ const NewsRouter = () => {
     "/user-manage/list": <UserList />,
     "/right-manage/role/list": <RoleList />,
     "/right-manage/right/list": <PermissionsList />,
-    "/news-manage/add": <AddNewsList />,
+    "/news-manage/list": <NewsList />,
     "/news-manage/draft": <NewsDraft />,
     "/news-manage/category": <NewsCategory />,
     "/audit-manage/audit": <AuditList />,

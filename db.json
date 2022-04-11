@@ -237,15 +237,15 @@
       "title": "新闻列表",
       "rightId": 14,
       "key": "/news-manage/list",
-      "grade": 2
+      "grade": 2,
+      "pagepermisson": 1
     },
     {
       "id": 16,
       "title": "撰写新闻",
       "rightId": 14,
       "key": "/news-manage/add",
-      "grade": 2,
-      "pagepermisson": 1
+      "grade": 2
     },
     {
       "id": 17,
